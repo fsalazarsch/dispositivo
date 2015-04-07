@@ -18,6 +18,35 @@
  */
 
 // api-geolocation
+
+var getPosition = function() {
+    var success = function(pos) {                
+        /*var text = "<div>Latitude: " + pos.coords.latitude + 
+                    "<br/>" + "Longitude: " + pos.coords.longitude + "<br/>" + 
+                    "Accuracy: " + pos.coords.accuracy + "m<br/>" + "</div>";*/
+        $("#cur_position_x").html(pos.coords.latitude);
+        $("#cur_position_y").html(pos.coords.longitude);
+        //console.log(text);
+        
+        /*var mapwidth = parseInt($('#map').css("width"), 10);  // remove 'px' from width value
+        var mapheight = parseInt($('#map').css("height"), 10);
+        $('#map').css('visibility','visible');
+        $('#map').attr('src', "http://maps.googleapis.com/maps/api/staticmap?center=" + 
+            pos.coords.latitude + "," + pos.coords.longitude + 
+            "&zoom=13&size=" + mapwidth + "x" + mapheight + "&maptype=roadmap&markers=color:green%7C" +
+            pos.coords.latitude + "," + pos.coords.longitude + "&sensor=false");*/
+    };
+    var fail = function(error) {
+        $("#cur_position").html("Error getting geolocation: " + error.code);
+        console.log("Error getting geolocation: code=" + error.code + " message=" + error.message);
+    };
+
+    //$('#map').css('visibility','hidden');
+    //$("#cur_position").html("Getting geolocation . . .");
+    console.log("Getting geolocation . . .");
+    navigator.geolocation.getCurrentPosition(success, fail);
+};
+
 var getCurrentPosition = function() {
     var success = function(pos) {                
         var text = "<div>Latitude: " + pos.coords.latitude + 

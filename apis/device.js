@@ -29,6 +29,11 @@ function onBackbutton() {
         $.mobile.silentScroll(0);
     }
 }
+
+var getuuid = function() {
+	document.getElementById("uuid").innerHTML = device.uuid;
+};
+
 var onDeviceReady = function() {
     console.log("deviceready event fired");
     // api-device
