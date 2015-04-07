@@ -30,9 +30,6 @@ function onBackbutton() {
     }
 }
 
-var getuuid = function() {
-	document.getElementById("uuid").innerHTML = device.uuid;
-};
 
 var onDeviceReady = function() {
     console.log("deviceready event fired");
@@ -90,4 +87,5 @@ var onDeviceReady = function() {
 
 function init() {
     document.addEventListener("deviceready", onDeviceReady, true);
+	
 }

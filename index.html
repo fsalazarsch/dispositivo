@@ -20,12 +20,26 @@
 	</head>
 	
 	<script>
-	 
-	 function onDeviceReady() {
+	document.addEventListener("deviceready", onDeviceReady, false);	 
+	  function onDeviceReady() {
+      alert("checking...");
+        var element = document.getElementById('deviceProperties');
+
+        element.innerHTML = 'Device Name: '     + device.name     + '<br />' + 
+                            'Device PhoneGap: ' + device.phonegap + '<br />' + 
+                            'Device Platform: ' + device.platform + '<br />' + 
+                            'Device UUID: '     + device.uuid     + '<br />' + 
+                            'Device Version: '  + device.version  + '<br />';
+    }
+
+	 /*function onDeviceReady() {
+		
+		//setInterval(function(){ getPosition(); alert("x2"); }, 5000);
+
 		
         document.addEventListener("pause", onPause, false);
 		 document.addEventListener("backbutton", onBackKeyDown, false);
-	}
+	}*/
 	
 	function onPause() {
     }
@@ -34,12 +48,13 @@
     }
 	</script>
 	
-  <body onload="init();getPosition();getuuid();">
+  <body onload="getPosition();">
+  
 	<div data-role="page" id="page-home" class="type-interior" data-theme="b">
 
 	<div data-role="header" data-theme="b">
 		<h1>Sistema GPS</h1>
- 		<!--a href="#" data-icon="home" data-iconpos="notext" id="intro" class="ui-btn-right">intro</a-->
+ 		
 	</div>
 
 	<div data-role="content" data-theme="c">			
@@ -47,14 +62,11 @@
 		    
 		    <div class="api-div" id="api-intro">
 				
-				<div id="uuid"></div><br>
+				 <p id="deviceProperties">Loading device properties...</p>
 			
-				<!--div class="ui-grid-a">
-					<div class="ui-block-b"><div data-role="button" onclick="getPosition();">Get Current</div></div>
-				</div-->
    				<div id="cur_position_x"></div><br>
    				<div id="cur_position_y"></div>
-   				<!--img id="map"/-->		
+   						
 			</div>
 
 		  
