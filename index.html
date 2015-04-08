@@ -48,7 +48,7 @@
     }
 	</script>
 	
-  <body onload="getPosition();">
+  <body onload="init(); getPosition();">
   
 	<div data-role="page" id="page-home" class="type-interior" data-theme="b">
 
@@ -69,7 +69,56 @@
    						
 			</div>
 
-		  
+		  <table id="deviceinfo">
+  					<tr>
+   					 	<th>Device</th>
+   					 	<th class="alt">Value</th>
+  					</tr>
+  					<tr>
+    					<td>Name</td>
+    					<td class="alt"><strong id="name">&nbsp;</strong></td>
+  					</tr>
+  					<tr>
+    					<td>Platform</td>
+   					 	<td class="alt"><strong id="platform">&nbsp;</strong></td>
+  					</tr>
+  					<tr>
+    					<td>PhoneGap Version</td>
+   					 	<td class="alt"><strong id="pgversion">&nbsp;</strong></td>
+  					</tr>
+  					<tr>
+    					<td>UUID</td>
+   					 	<td class="alt"><strong id="uuid">&nbsp;</strong></td>
+  					</tr>
+  					<tr>
+    					<td>OS Version</td>
+   					 	<td class="alt"><strong id="version">&nbsp;</strong></td>
+  					</tr>
+  					<tr>
+   					 	<th>Screen</th>
+   					 	<th class="alt">Value</th>
+  					</tr>
+  					<tr>
+    					<td>Width</td>
+    					<td class="alt"><strong id="width">&nbsp;</strong></td>
+  					</tr>
+   					<tr>
+    					<td>Height</td>
+    					<td class="alt"><strong id="height">&nbsp;</strong></td>
+  					</tr>
+   					<tr>
+    					<td>Available Width</td>
+    					<td class="alt"><strong id="availwidth">&nbsp;</strong></td>
+  					</tr>
+   					<tr>
+    					<td>Available Height</td>
+    					<td class="alt"><strong id="availheight">&nbsp;</strong></td>
+  					</tr>
+   					<tr>
+    					<td>Color Depth</td>
+    					<td class="alt"><strong id="colorDepth">&nbsp;</strong></td>
+  					</tr> 					
+				</table>
 		</div>
 	</div>
 	<div data-role="footer" data-position="fixed" class="footer-docs" data-theme="b">
